@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, flash, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, flash, request, redirect, url_for, send_from_directory, abort
 import json
 import glob
 import re
@@ -32,7 +32,8 @@ def show_user_profile(year_raw, unique_id):
     year = str(year_raw)
     if valid_id(year, unique_id):
         return render_template('{}/reveal.html'.format(year), info=conf[year][unique_id], photos=photos)
-    return redirect('/')
+    abort(404)
+    #return redirect('/')
 
 @app.route('/static/<path:path>')
 def send_static(path):

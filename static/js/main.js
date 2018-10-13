@@ -7,12 +7,12 @@ $(function() {
 
   pause = 1100
   i = Math.floor(Math.random() * 1000) % photos.length;
+  $("#mystery_photo").html('<img src="' + photos[i % photos.length] + '">')
 
   ;(function animate_photos() {
     setTimeout(function() {
-      console.log(photos[i % photos.length])
-      $("#mystery_photo").html('<img src="' + photos[i % photos.length] + '">')
       i += 1
+      $("#mystery_photo").html('<img src="' + photos[i % photos.length] + '">')
       if (pause > 100) {
         pause -= 100
       }
@@ -27,7 +27,6 @@ $(function() {
   function reveal_final(){
     $("#mystery_box").css("display", "none")
     $("#reveal_box").css("display", "block")
-    console.log("Reveal!")
   }
   //<img src="/photos/{{ info["photo"] }}">
 
