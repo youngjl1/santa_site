@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta name="photos" content="{{ ','.join(photos) }}">
+    <meta name="giver" content="{{info["giver"]}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type='text/javascript' src='/static/js/main.js'></script>
+
+  </head>
+  <body>
+    <h1>Hey there {{ info["giver"] }}!!</h1>
+    <br />
+    <div id="mystery_box">
+      <h2>Wait for it...</h2>
+      <div id="mystery_photo"></div>
+    </div>
+
+    <div id="reveal_box" style="display:none">
+      <img src="/photos/{{ info["photo"] }}">
+      <h2>{{ info["receiver"] }}!!!</h2>
+    </div>
+  </body>
+</html>
