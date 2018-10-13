@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Hello, World! From luke.'
 
 @app.route('/doc/<int:doc_id>')
 def show_user_profile(doc_id):
